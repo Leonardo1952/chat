@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "788916368810",
+    "firebase_url": "https://chatflutter-professor.firebaseio.com",
+    "project_id": "chatflutter-professor",
+    "storage_bucket": "chatflutter-professor.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:788916368810:android:a3944363c802ad3ba5a7d3",
+        "android_client_info": {
+          "package_name": "br.com.ciolfi.chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "788916368810-v7j57fn4hj0etdh80b2i6i8flafthm9v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.ciolfi.chat",
+            "certificate_hash": "cc98a9164451dba458ea82987bb287b12cd7cae1"
+          }
+        },
+        {
+          "client_id": "788916368810-o14dejc20i8ej8fru3b4m342i4vjcah4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWFoYePlL2tIfYHwQp-FuIhdOgMubboFw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "788916368810-o14dejc20i8ej8fru3b4m342i4vjcah4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
