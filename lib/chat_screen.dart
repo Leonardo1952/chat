@@ -1,11 +1,14 @@
 import 'dart:io';
 
 import 'package:chat/text_composer.dart';
+import 'package:chat/chat_message.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+
+import 'chat_message.dart';
 
 class ChatScreen extends StatefulWidget {
   @override
@@ -15,7 +18,7 @@ class ChatScreen extends StatefulWidget {
 class _ChatScreenState extends State<ChatScreen> {
 
   final GoogleSignIn googleSignIn = GoogleSignIn();
-  final GlobalKey<ScaffoldState> _scafooldKey = GlobalKey<ScaffoldState>();
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   FirebaseUser _currentUser;
 
   @override
@@ -54,7 +57,7 @@ class _ChatScreenState extends State<ChatScreen> {
       final FirebaseUser user = await _getUser();
 
       if(user == null) {
-        _scafooldKey.currentState.showSnackBar(
+        _scaffoldKey.currentState.showSnackBar(
             SnackBar(
               content: Text('Não foi possivel fazer o login. Tente novamente!'),
               backgroundColor: Colors.red,
@@ -84,7 +87,7 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: _scafooldKey,
+      key: _scaffoldKey,
       appBar: AppBar(
         title: Text('Olá'),
         elevation: 0,
@@ -108,9 +111,8 @@ class _ChatScreenState extends State<ChatScreen> {
                       itemCount: documents.length,
                       reverse: true,
                       itemBuilder: (context, index){
-                        return ListTile(
-                          title: Text(documents[index].data['text']),
-                        );
+                        return ChatMessage(documents[index].data, true);
+
                       }
                     );
                 }
